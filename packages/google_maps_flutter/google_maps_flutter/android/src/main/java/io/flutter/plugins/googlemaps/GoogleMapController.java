@@ -560,6 +560,9 @@ final class GoogleMapController
       return;
     }
     mapView.onResume();
+    if (googleMap != null) {
+      googleMap.setMapType(googleMap.getMapType());
+    }
   }
 
   @Override
@@ -568,6 +571,9 @@ final class GoogleMapController
       return;
     }
     mapView.onResume();
+    if (googleMap != null) {
+      googleMap.setMapType(googleMap.getMapType());
+    }      
   }
 
   @Override
@@ -830,16 +836,5 @@ final class GoogleMapController
   public void setBuildingsEnabled(boolean buildingsEnabled) {
     this.buildingsEnabled = buildingsEnabled;
   }
-  @Override
-  public void onActivityResumed(Activity activity) {
-    if (disposed || activity.hashCode() != registrarActivityHashCode) {
-      return;
-    }
-    mapView.onResume();
-    // Workaround for https://github.com/flutter/flutter/issues/40284
-    // This apparently forces a re-render of the map.
-    if (googleMap != null) {
-      googleMap.setMapType(googleMap.getMapType());
-    }
-  }
+
 }
