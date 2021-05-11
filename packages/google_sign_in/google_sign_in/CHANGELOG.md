@@ -1,11 +1,19 @@
-## 5.0.0-nullsafety.1
+## NEXT
 
-* Document that the web plugin is not endorsed in the `nullsafety` prerelease for now.
+* Fixed links in `README.md`.
 
-## 5.0.0-nullsafety
+## 5.0.2
 
-* Migrate to nnbd.
-* **Breaking change**: web plugins aren't endorsed in null-safe plugins yet.
+* Fix flutter/flutter#48602 iOS flow shows account selection, if user is signed in to Google on the device.
+
+## 5.0.1
+
+* Update platforms `init` function to prioritize `clientId` property when available;
+* Updates `google_sign_in_platform_interface` version.
+
+## 5.0.0
+
+* Migrate to null safety.
 
 ## 4.5.9
 
